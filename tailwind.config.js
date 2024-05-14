@@ -17,6 +17,9 @@ module.exports = {
         tabTextColor: 'rgba(16, 45, 71, 1)',  
         customborderColor: 'rgba(237, 245, 255, 1)',
         customBtn2Color: 'rgba(47, 115, 242, 1)', 
+        pcol:'rgba(41, 52, 61, 1)',
+        finishtext: 'rgba(152, 164, 174, 1)',
+
       },
       boxShadow: {
         'shadowMd': '0px 4px 8px 0px rgba(47, 115, 242, 0.15)',
