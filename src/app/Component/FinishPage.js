@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 
-function FinishPage() {
+function FinishPage({ onPrevious}) {
   return (
    
     <div className="w-full max-w-[1080px] border rounded-[24px] mt-8 p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15) mt-3 flex flex-col gap-[24px] bg-white">
@@ -51,11 +51,14 @@ function FinishPage() {
                         </div>
 
                     </div>
-                    <div className='flex justify-between '>
+                    <div className='flex   justify-around'>
+                    <button className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600 transition-colors duration-300 ' onClick={onPrevious}>
+            <span className='font-medium text-lg font-sans leading-[23px]  text-white'>Previous Step</span></button>
           <button className='rounded-[8px] py-[8px] px-[16px] bg-customborderColor hover:bg-gray-300 transition-colors duration-300'>
             <span className='font-medium text-lg font-sans leading-[23px]  text-ptagcolor'>Continue Shopping</span></button>
           <button  className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600 transition-colors duration-300 '> 
           <span className='font-medium text-lg font-sans leading-[23px]  text-white'> Download Receipt  </span></button>
+          
         </div>
         </div>
       

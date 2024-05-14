@@ -5,7 +5,8 @@ import Image from 'next/image'
 function PaymentPage({ onPrevious, onNext }) {
   return (
   
-    <div className="w-full max-w-[1080px] border rounded-[24px] mt-8 p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15) mt-3 flex flex-col gap-[24px] bg-white">
+    <div className="w-full max-w-[1080px] border rounded-[24px] mt-8 p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15) mt-3 flex flex-col gap-[20px] bg-white">
+   
           <div className='flex flex-col gap-[4px]'>
           <h2 className='font-bold text-center text-[26px] font-sans leading-[33px] text-customColor'>Sign Up Your User Account</h2>
           <p className='font-sans font-normal text-[16px] text-center text-ptagcolor'>Fill all form field to go to next step</p>
@@ -47,22 +48,20 @@ function PaymentPage({ onPrevious, onNext }) {
                       
                               <p className=' font-sans text-base font-medium leading-[20px] text-tabTextColor'>Card Type</p>
                       
-                    <div className=' flex gap-[24px]'>
-                            {/* <div className=' rounded-[8px] py-[4px] px-[0px] shadow-[0px 4px 8px 0px rgba(47, 115, 242, 0.15)]  shadow bg-white'> */}
-                            <div className=' rounded-[8px] py-[4px] px-[0px] shadow-shadowMd bg-white'>
+                    <div className='flex flex-wrap gap-[24px]'>
+                            <div className=' rounded-[8px] py-[4px] px-[0px] shadow-shadowMd bg-white w-full sm:w-auto'>
 
-                                 <Image src='/icons/card.svg' width={208} height={72}  className='rounded-[8px]' alt='card logo'></Image>
+                                 <Image src='/icons/card.svg' width={208} height={72}  className='rounded-[8px] flex-1' alt='card logo'></Image>
                                  </div>
-                                 <div className=' rounded-[8px] py-[4px] px-[12px] shadow-shadowMd  bg-white'>
-                                 <Image src='/icons/card (1).svg' width={208} height={72}  className='rounded-[8px]' alt='card logo'></Image>
+                                 <div className=' rounded-[8px] py-[4px] px-[12px] shadow-shadowMd  bg-white w-full sm:w-auto'>
+                                 <Image src='/icons/card (1).svg' width={208} height={72}  className='rounded-[8px] flex-1' alt='card logo'></Image>
                                  </div>
-                                 <div className='rounded-[8px] py-[4px] px-[12px] shadow-shadowMd   bg-white'>
-                                 <Image src='/icons/card(2).svg' width={208} height={72}  className='rounded-[8px]' alt='card logo'></Image>
+                                 <div className='rounded-[8px] py-[4px] px-[12px] shadow-shadowMd   bg-white w-full sm:w-auto'>
+                                 <Image src='/icons/card(2).svg' width={208} height={72}  className='rounded-[8px] flex-1' alt='card logo'></Image>
                                  </div>
 
-                                 <div className=' rounded-[8px] py-[4px] px-[12px] shadow-shadowMd  bg-white'>
-                                 <Image src='/icons/card(4).svg' width={208} height={72}  className='rounded-[8px]' alt='card logo'></Image>
-                                 {/* <p className='w-[50px] h-[50px] rounded-[8px]'>See All</p> */}
+                                 <div className=' rounded-[8px] py-[4px] px-[12px] shadow-shadowMd bg-white flex-1  flex  justify-center items-center w-full sm:w-aut0'>
+                                  <a  href='#' className='rounded-[8px] '>See All</a>
                                  </div>
                     </div>
                     
@@ -72,32 +71,32 @@ function PaymentPage({ onPrevious, onNext }) {
                                     <p className=' font-sans font-medium text-base leading-[20px] text-tabTextColor '>
                                     Name of card
                                     </p>
-                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300  focus:outline-none'/>
+                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none'/>
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                     <p className='font-sans font-medium text-base leading-[20px] text-tabTextColor '>
                                     Card number
                                     </p>
-                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:outline-none '/>
+                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300  focus:border-slate-500 focus:outline-none '/>
                             </div>
                             <div className=' flex flex-col gap-[8px]'>
                                     <p className=' font-sans font-medium text-base leading-[20px] text-tabTextColor '>
                                     Card number
                                     </p>
-                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:outline-none'/>
+                                    <input type='text' placeholder='Name Of Card' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none'/>
                             </div>
-                            <div className=' flex flex-row gap-[24px]'>
+                            <div className=' flex flex-row gap-[24px]  '>
                                 <div className=' flex flex-col  w-full gap-[8px]'>
                                   <p className='  font-sans font-medium text-base leading-[20px] text-tabTextColor '>
                                   Expiration date
                                     </p>
-                                    <input type='text' placeholder='mm/yy' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300  focus:outline-none'/>   
+                                    <input type='date' placeholder='mm/yy' className='py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none'/>   
                                 </div>
                                 <div className='flex flex-col w-full gap-[8px]'>
                                   <p className=' font-sans font-medium text-base leading-[20px] text-tabTextColor '>
                                  CVV
                                     </p>
-                                    <input type='text' placeholder='cvv' className=' py-[8px] px-[12px] bg-white border-b border-customborderColor-300  focus:outline-none'/>   
+                                    <input type='text' placeholder='cvv' className=' py-[8px] px-[12px] bg-white border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none'/>   
                                 </div>
                             </div>
                            
