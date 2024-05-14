@@ -1,0 +1,8 @@
+body{
+    height: 100vh;
+}
+.custom-gradient
+{
+    background: linear-gradient(135deg, #FFF5C3 0%, #9452A5 100%);
+}
+
