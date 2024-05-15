@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     // <div className='h-screen flex justify-center custom-gradient'>
-    <div className=' h-screen flex justify-center custom-gradient overflow-scroll'>
+    <div className=' h-screen flex justify-center custom-gradient overflow-y-scroll'>
 
 
 
