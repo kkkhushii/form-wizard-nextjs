@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 
-function PersonalInfo({ onPrevious, onNext}) {
+function PersonalInfo({ onPrevious, onNext,onSetImage}) {
  
   return (
     
@@ -11,16 +11,16 @@ function PersonalInfo({ onPrevious, onNext}) {
           <h2 className='font-bold text-center text-[26px] font-sans leading-[33px] text-customColor'>Sign Up Your User Account</h2>
           <p className='font-sans font-normal text-[16px] text-center text-ptagcolor'>Fill all form field to go to next step</p>
           </div>
-             <div className='flex justify-between items-center gap-2'>
+             <div className='flex justify-between items-center gap-2 cursor-pointer'>
                     <div className='flex flex-col gap-[8px] justify-center items-center'>
                          <div  className='bg-customborderColor rounded-full  h-[50px] w-[50px] flex justify-center items-center' >
-                            <Image src='/icons/lockicon(1).svg'  width={0} height={0}  className="h-[25px] w-[20px]"  alt='account logo' ></Image>
+                            <Image src='/icons/lockicon(1).svg'  width={0} height={0}  className="h-[25px] w-[20px]"  alt='account logo'  onClick={() => onSetImage(1)}></Image>
                           </div>
                        <p className='font-sans font-medium text-[16px] text-tabTextColor'>Account</p>
                     </div>
                     <div className=' flex flex-col  gap-[8px] justify-center items-center'>
                     <div  className='bg-customBtn2Color rounded-full  h-[50px] w-[50px] flex justify-center items-center'>
-                        <Image src='/icons/personalicon.svg' width={0} height={0}  className="h-[30px] w-[25px]" alt='user logo' ></Image>
+                        <Image src='/icons/personalicon.svg' width={0} height={0}  className="h-[30px] w-[25px]" alt='user logo'  onClick={() => onSetImage(2)}></Image>
                         </div>
                        <p className='font-sans font-medium text-[16px] text-tabTextColor'>Personal</p>
                     <div className='border-b-[3px] w-8 border-blue-400'> </div>
@@ -28,13 +28,13 @@ function PersonalInfo({ onPrevious, onNext}) {
                     </div>
                     <div className=' flex flex-col  gap-[8px] justify-center items-center'>
                     <div  className='bg-customborderColor rounded-full  h-[50px] w-[50px] flex justify-center items-center'>
-                    <Image src='/icons/visaicon.svg' width={0} height={0}  className="h-[30px] w-[25px]"   alt='payment logo'   ></Image>
+                    <Image src='/icons/visaicon.svg' width={0} height={0}  className="h-[30px] w-[25px]"   alt='payment logo'  onClick={() => onSetImage(3)} ></Image>
                     </div>
                        <p className='font-sans font-medium text-[16px] text-tabTextColor'>Payment</p>
                     </div>
                     <div className='flex flex-col  gap-[8px] justify-center items-center'>
                     <div  className='bg-customborderColor rounded-full  h-[50px] w-[50px] flex justify-center items-center'>
-                        <Image src='/icons/iconcheck.svg' width={0} height={0}  className="h-[30px] w-[25px]"   alt='finsih logo'></Image>
+                        <Image src='/icons/iconcheck.svg' width={0} height={0}  className="h-[30px] w-[25px]"   alt='finsih logo' onClick={() => onSetImage(4)}></Image>
                         </div>
                        <p className='font-sans font-medium text-[16px] text-tabTextColor'>Finish</p>
                     </div>
