@@ -6,7 +6,7 @@ import PersonalInfo from '../app/Component/PersonalInfo'
 import PaymentPage from '../app/Component/PaymentPage'
 import FinishPage from '../app/Component/FinishPage'
 import '../app/Component/UserAcStyle.css'
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
 
   };
 
-  const handleimage = (componentNumber) => {
+  const handleimage = (componentNumber: SetStateAction<number>) => {
     setStep(componentNumber);
   };
 
