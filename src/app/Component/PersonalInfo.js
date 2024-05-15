@@ -6,7 +6,7 @@ function PersonalInfo({ onPrevious, onNext,onSetImage}) {
  
   return (
     
-    <div className="w-full max-w-[1080px]  border rounded-[24px] mt-8 p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15) mt-3 flex flex-col gap-[24px] bg-white">
+    <div className="w-full max-w-[1080px]  border rounded-[24px] h-fit mt-[100px] mb-[10px]  p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15)  flex flex-col gap-[24px] bg-white">
           <div className='flex flex-col gap-[4px]'>
           <h2 className='font-bold text-center text-[26px] font-sans leading-[33px] text-customColor'>Sign Up Your User Account</h2>
           <p className='font-sans font-normal text-[16px] text-center text-ptagcolor'>Fill all form field to go to next step</p>
@@ -44,9 +44,13 @@ function PersonalInfo({ onPrevious, onNext,onSetImage}) {
             <div>
                 <h2 className='font-medium font-sans text-[20px] text-tabTextColor'>Personal Information</h2>
            </div>
+           <form  onSubmit={onNext}>
           <div  className="flex flex-col gap-[20px] ">
-        <input type='text' placeholder='Full Name' className=" py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none" />
-        <input type='email' placeholder='Email Id' className="py-[8px] px-[16px]   border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none" />
+           
+              
+          
+        <input type='text' placeholder='Full Name' className=" py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none"  required/>
+        <input type='email' placeholder='Email Id' className="py-[8px] px-[16px]   border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none" required />
         <input type='text' placeholder='Contact Number' className=" py-[8px] px-[16px]  border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none" />
         <div className="flex flex-col gap-4  py-0 px-[16px] font-normal text-[16px]"  style={{ color: 'rgba(84, 117, 147, 1)' }}>
         <p className="">Select Gender:</p>
@@ -62,14 +66,16 @@ function PersonalInfo({ onPrevious, onNext,onSetImage}) {
   </div>
   
 </div>
+
     </div>
-   
-        <div className='flex justify-between'>
+        <div className='flex justify-between mt-6'>
           <button className='rounded-[8px] py-[8px] px-[16px] bg-customborderColor hover:bg-gray-300 transition-colors duration-300' onClick={onPrevious}>
             <span className='font-medium text-lg font-sans leading-[23px]  text-ptagcolor' >Previous Step </span></button>
-          <button  className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600 transition-colors duration-300 ' onClick={onNext}> 
+          <button  className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600 transition-colors duration-300 '> 
           <span className='font-medium text-lg font-sans leading-[23px]  text-white'> Next Step  </span></button>
         </div>
+        </form>
+        
   </div>
         </div>
       

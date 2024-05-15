@@ -1,13 +1,43 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react';
 
 
 function Example({ onNext ,onSetImage   }) {
 
+  const [formData, setFormData] = useState({
+    email: '',
+    username: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { password, confirmPassword } = formData;
+
+    if (password !== confirmPassword) {
+      alert("Password and Confirm Password fields don't match.");
+      return;
+    }
+
+    // Proceed to the next step or page
+    onNext();
+  };
+ 
   return (
 
-    <div className="w-full max-w-[1080px] border rounded-[24px] mt-8 p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15) mt-3 flex flex-col gap-[24px] bg-white">
+    <div className="w-full max-w-[1080px] border rounded-[24px] h-fit mt-[100px] mb-[10px] p-[40px] drop-shadow-[rgba(47, 115, 242, 0.15)  flex flex-col gap-[24px] bg-white">
      
       <div className='flex flex-col gap-[4px]'>
         <h2 className='font-bold text-center text-[26px] font-sans leading-[33px] text-customColor'>Sign Up Your User Account</h2>
@@ -46,23 +76,55 @@ function Example({ onNext ,onSetImage   }) {
         <div>
           <h2 className='font-medium font-sans text-[20px] text-tabTextColor'>Account Information</h2>
         </div>
-        <form>
-        <div className="grid grid-cols-1 gap-[20px]">
-
-          <input type='email' placeholder='Email Id' className="py-[8px] px-[16px] border-b border-customborderColor-300   focus:border-slate-500   focus:outline-none" required/>
-          <input type='text' placeholder='Username' className=" py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500  focus:outline-none"  required/>
-          <input type='password' placeholder='Password' className=" py-[8px] px-[16px] border-b border-customborderColor-300  focus:border-slate-500 focus:outline-none" required />
-          <input type='password' placeholder='Confirm Password' className=" py-[8px] px-[16px] border-b border-customborderColor-300  focus:border-slate-500 focus:outline-none"  required/> 
+        <form  onSubmit={handleSubmit}>
+         <div className="grid grid-cols-1 gap-[20px]">
+            <input
+              type='email'
+              name='email'
+              placeholder='Email Id'
+              className="py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type='text'
+              name='username'
+              placeholder='Username'
+              className="py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none"
+              value={formData.username}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type='password'
+              name='password'
+              placeholder='Password'
+              className="py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none"
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type='password'
+              name='confirmPassword'
+              placeholder='Confirm Password'
+              className="py-[8px] px-[16px] border-b border-customborderColor-300 focus:border-slate-500 focus:outline-none"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
         
+        <div className='flex justify-center mt-6'>
+          <button className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600  transition-colors duration-300' type='submit'>
+            <span className='font-sans font-medium text-lg leading-[23px] text-white'> Next Step </span>
+          </button>
         </div>
         </form>
+        
       </div>
-      <div className='flex justify-center'>
-        <button className='rounded-[8px] py-[8px] px-[16px] bg-customBtn2Color hover:bg-blue-600  transition-colors duration-300'  onClick={onNext}>
-          <span className='font-sans font-medium  text-lg leading-[23px] text-white'> Next Step </span>
-        </button>
-
-      </div>
+      
     </div>
   )
 }

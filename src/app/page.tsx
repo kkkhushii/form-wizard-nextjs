@@ -27,8 +27,10 @@ export default function Home() {
   };
 
   return (
-    <div className='h-screen flex justify-center items-center  custom-gradient'>
-      {/* <div className='h-screen flex justify-center items-center '> */}
+    // <div className='h-screen flex justify-center custom-gradient'>
+    <div className=' h-screen flex justify-center custom-gradient overflow-scroll'>
+
+
 
       {step === 1 && <UseAccountfirst onNext={handleNext} onSetImage={handleimage} />}
       {step === 2 && <PersonalInfo onPrevious={handlePrevious} onNext={handleNext} onSetImage={handleimage} />}
